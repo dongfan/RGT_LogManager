@@ -15,10 +15,9 @@ int main() {
     std::vector<std::string> errorLogs = manager.readLogs("error.log");
 
     try {
-        auto logs = manager.readLogs("error.log");
-        for (const auto& line : logs) {
-            std::cout << line << std::endl;
-        }
+         for (const auto& log : errorLogs) {
+        std::cout << log << std::endl; // "[2025-09-19 23:12:41] Database connection failed"
+    }
     } catch (const std::exception& e) {
         std::cerr << "읽기 실패: " << e.what() << std::endl;
     }
