@@ -10,7 +10,6 @@ LogFile::LogFile(const std::string& filename) {
     if (!file || !file->is_open()) {
         throw std::runtime_error("파일을 열 수 없습니다: " + filename);
     }
-    std::cout << "로그 파일 열림: " << filename << std::endl;
 }
 
 void LogFile::write(const std::string& msg) {
@@ -39,6 +38,5 @@ void LogFile::write(const std::string& msg) {
 LogFile::~LogFile() {
     if (file && file->is_open()) {
         file->close();
-        std::cout << "로그 파일 닫힘" << std::endl;
     }
 }
